@@ -1,0 +1,37 @@
+constructor (
+    string memory paramPrestador,
+    string memory nomeEmpresa,
+    uint256 valorHoraTrabalho,
+    uint256 horasTrabalhadas) public
+    {
+        prestador = paramPrestador;
+        empresa = nomeEmpresa;
+        if (valorHoraTrabalho>300)
+        {
+            valor = 300;
+    } else {
+        valor = valorHoraTrabalho;
+    }
+    horas - horasTrabalhadas;
+    }
+    
+    funcion calculoRemuneracao () public view returns(uint256 remuneracaoFinal)
+    {
+        remunaracaoFinal = valor*horas;
+        return remunaracaoFinal;
+    }
+    
+    function ajustaLimiteHoras (uint256 _horas) public
+    {
+        require(_horas<=200, "Limite de Horas Ultrapassadas");
+        horas = _horas;
+    }
+    
+    function ajusteValorHora (uint256 _valor) public
+    {
+        if (_valor>300)
+        {
+            valor = 300;
+        } else if (_valor>200 && _valor <=300) {
+            valor = 250;
+        } else if (_valor == 197)
